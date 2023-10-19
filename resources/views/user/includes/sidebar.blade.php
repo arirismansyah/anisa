@@ -33,9 +33,7 @@
                 </li>
 
 
-
-
-
+                @hasanyrole(['Admin|Ketua Tim Umum'])
                 <li class="sub-category">
                     <h3>Input Komponen IKPA Umum</h3>
                 </li>
@@ -52,8 +50,9 @@
                         <li><a href="{{ url('/spm') }}" class="slide-item"> Dispensasi SPM</a></li>
                     </ul>
                 </li>
+                @endhasanyrole
 
-                @hasanyrole(['Ketua Tim'])
+                @hasanyrole(['Admin|Ketua Tim'])
                     <li class="sub-category">
                         <h3>Input Komponen IKPA Tim</h3>
                     </li>

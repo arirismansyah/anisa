@@ -7,7 +7,7 @@
     content="bootstrap 5, business, corporate, creative, gulp, marketing, minimal, modern, multipurpose, one page, responsive, saas, sass, seo, startup, html5 template, site template">
 <meta name="author" content="elemis">
 <title>Anisa</title>
-<link rel="shortcut icon" href="{{ url('/sandbox/img/logo_icon_pst.png') }}">
+<link rel="shortcut icon" href="{{ url('/zanex/images/brand/logo_anisa.png') }}">
 <link rel="stylesheet" href="{{ url('/sandbox/css/plugins.css') }}">
 <link rel="stylesheet" href="{{ url('/sandbox/css/style.css') }}">
 <link rel="stylesheet" href="{{ url('/sandbox/css/colors/purple.css') }}">

@@ -57,8 +57,7 @@
                     <div class="col-lg-6 d-flex align-items-center h-100" data-cue="slideInDown" data-show="true"
                         style="animation-name: slideInDown; animation-duration: 700ms; animation-timing-function: ease; animation-delay: 0ms; animation-direction: normal; animation-fill-mode: both;">
                         <figure>
-                            <img class="img-fluid" src="{{ url('sandbox/img/illustrations/i20.png') }}"
-                                srcset="{{ url('sandbox/img/illustrations/i20@2x.png') }} 2x" alt="" />
+                            <img class="img-fluid" src="{{ url('sandbox/img/illustrations/i20@2x.png') }}" alt="" />
                         </figure>
                     </div>
 

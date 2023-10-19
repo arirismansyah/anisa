@@ -16,6 +16,8 @@ class MOutput extends Model
         'kd_output',
         'kd_suboutput',
         'uraian_output',
+        'kode_tim',
+        'nama_tim',
         'created_by',
         'updated_by',
     ];

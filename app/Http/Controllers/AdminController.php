@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Knowledge;
+use App\Models\MOutput;
 use App\Models\Qna;
 use App\Models\Tim;
 use App\Models\User;
@@ -16,8 +17,6 @@ use \wapmorgan\UnifiedArchive\UnifiedArchive;
 class AdminController extends Controller
 {
     //
-
-
     public function roles()
     {
         $data_roles = Role::paginate(10);
@@ -55,9 +54,21 @@ class AdminController extends Controller
         return view('admin/pages/adk');
     }
 
-    public function alokasi_output()
+    public function alokasi_output(Request $request)
     {
-        return view('admin/pages/alokasi_output');
+        if ($request->tahun_anggaran) {
+            # code...
+            $tahun_anggaran = $request->tahun_anggaran;
+        } else {
+            # code...
+            $tahun_anggaran = date('Y');
+        }
+
+        $data_output_belum = MOutput::where('tahun_anggaran', $tahun_anggaran)->whereNull('kode_tim')->get();
+        $data_output_sudah = MOutput::where('tahun_anggaran', $tahun_anggaran)->whereNotNull('kode_tim')->get();
+        $data_tim = Tim::all();
+        
+        return view('admin/pages/alokasi_output', compact('tahun_anggaran', 'data_output_belum', 'data_output_sudah', 'data_tim'));
     }
 
     public function upload_adk(Request $request)
@@ -83,4 +94,6 @@ class AdminController extends Controller
             return redirect()->back()->with('error', 'Upload ADK gagal.');
         }
     }
+
+    
 }

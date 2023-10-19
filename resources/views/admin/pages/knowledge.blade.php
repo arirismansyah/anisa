@@ -29,47 +29,32 @@
                 {{-- MESSAGES --}}
 
                 <!-- ROW-1 OPEN -->
+                @foreach ($data_knowledge as $knowledge)
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">FAQ</h3>
+                                <h3 class="card-title">{{$knowledge->judul}}</h3>
+                                <div class="card-options">
+                                    <a href="javascript:void(0);" class="card-options-collapse" data-bs-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                                    <a href="javascript:void(0);" class="card-options-fullscreen" data-bs-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+                                    <a href="javascript:void(0);" class="card-options-remove" data-bs-toggle="card-remove"><i class="fe fe-x"></i></a>
+                                </div>
                             </div>
                             <div class="card-body">
-
-
-                                <div class="accordion" id="accordionExample">
-                                    @foreach ($data_faq as $faq)
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header" id="heading{{ $faq->id }}">
-                                                <button class="accordion-button collapsed" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="#collapse{{ $faq->id }}"
-                                                    aria-expanded="false" aria-controls="collapse{{ $faq->id }}">
-                                                    <i class="fe fe-help-circle me-2" aria-hidden="true"></i>
-                                                    <span>{{ $faq->pertanyaan }}</span>
-                                                </button>
-                                            </h2>
-                                            <div id="collapse{{ $faq->id }}" class="accordion-collapse collapse"
-                                                aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                                <div class="accordion-body">
-                                                    {{ $faq->jawaban }}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-
-
-                                </div>
-
-
-
+                                {{$knowledge->deskripsi}}
                             </div>
-
                             <div class="card-footer">
-                                {{ $data_faq->links('vendor.pagination.simple-bootstrap-4') }}
+                                <a href="{{$knowledge->lampiran}}" class="btn btn-primary">Lampiran</a>
                             </div>
                         </div>
-                    </div><!-- COL-END -->
+                    </div>
+                </div>    
+                @endforeach
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        {{ $data_knowledge->links('vendor.pagination.simple-bootstrap-4') }}
+                    </div>
                 </div>
             </div>
         </div>

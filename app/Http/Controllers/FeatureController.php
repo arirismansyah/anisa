@@ -54,7 +54,7 @@ class FeatureController extends Controller
             # code...
             return view('admin/pages/input_komponen/umum/revisi_dipa', compact('data_revisi'));
         } else {
-            return view('auserdmin/pages/input_komponen/umum/revisi_dipa', compact('data_revisi'));
+            return view('user/pages/input_komponen/umum/revisi_dipa', compact('data_revisi'));
         }
     }
 
@@ -164,10 +164,10 @@ class FeatureController extends Controller
         $roles = $user->roles->pluck('name')->toArray();
         if (in_array('Admin', $roles)) {
             # code...
-            return view('admin/pages/knowledges', compact('data_knowledge'));
+            return view('admin/pages/knowledge', compact('data_knowledge'));
         } else {
             # code...
-            return view('user/pages/knowledges', compact('data_knowledge'));
+            return view('user/pages/knowledge', compact('data_knowledge'));
         }
     }
 
@@ -184,4 +184,6 @@ class FeatureController extends Controller
             return view('user/pages/faq', compact('data_faq'));
         }
     }
+
+    
 }

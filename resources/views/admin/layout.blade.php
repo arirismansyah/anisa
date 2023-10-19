@@ -138,12 +138,13 @@
     <script src="{{ url('/zanex/js/form-elements.js') }}"></script>
 
     <!-- SWEET-ALERT JS -->
-    <script src="{{ url('') }}/zanex/plugins/sweet-alert/sweetalert.min.js"></script>
+    <script src="{{ url('/zanex/plugins/sweet-alert/sweetalert.min.js') }}"></script>
 
     {{-- THEME --}}
     <script src="{{ url('js/theme.js') }}"></script>
 
     <!-- STACK CUSTOM JS -->
+    <script src="{{url('/zanex/js/custom.js')}}"></script>
     <script src="{{ url('js/date_picker.js') }}"></script>
     @stack('scripts')
 

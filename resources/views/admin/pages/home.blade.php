@@ -128,7 +128,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <div class="panel panel-primary">
                             <div class="card">
@@ -155,7 +155,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         <!-- CONTAINER CLOSED -->

@@ -22,7 +22,7 @@ class AuthController extends Controller
 
         if (Auth::attempt($credential)) {
             # code...
-            return redirect()->intended('home');
+            return redirect()->intended('landing');
         } else {
             return back()->with('error', 'Username atau password salah.');
         }

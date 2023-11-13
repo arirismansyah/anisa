@@ -14,6 +14,10 @@
 
             <div class="container col-lg-12 h-100 d-flex align-items-center">
 
+                <div class="row">
+                    
+                </div>
+
                 <div class="row d-flex justify-content-around w-100">
                     <div class="col-lg-6 ">
 
@@ -22,7 +26,15 @@
 
                         <div class="card shadow-lg">
                             <div class="card-body">
-                                <h3 class="mb-5">Login</h3>
+                                <div class="row d-flex align-items-center mb-4">
+                                    <div class="col-sm-2 d-flex justify-content-start">
+                                        <h3 class="align-middle">Login</h3>
+                                    </div>
+                                    <div class="col-sm-3 d-flex justify-content-start">
+                                        <img class="img-fluid" src="{{ url('/zanex/images/brand/logo_anisa.png') }}"  alt="" style="height: 80px"/>
+                                    </div>
+                                </div>
+                                
                                 <form action="{{ url('auth') }}" method="POST">
                                     @csrf
                                     <div class="form-floating mb-4">

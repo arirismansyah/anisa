@@ -28,6 +28,11 @@
                 </li>
 
                 <li class="slide">
+                    <a class="side-menu__item" data-bs-toggle="slide" href="{{url('/landing')}}"><i class="side-menu__icon fe fe-airplay"></i><span class="side-menu__label">Landing
+                            Page</span></a>
+                </li>
+
+                <li class="slide">
                     <a class="side-menu__item" data-bs-toggle="slide" href="{{ url('/home') }}"><i
                             class="side-menu__icon fe fe-home"></i><span class="side-menu__label">Dashboard</span></a>
                 </li>
@@ -71,7 +76,7 @@
                     </ul>
                 </li>
 
-
+                @hasanyrole(['Admin|Ketua Tim Umum'])
                 <li class="sub-category">
                     <h3>Input Komponen IKPA Umum</h3>
                 </li>
@@ -88,7 +93,9 @@
                         <li><a href="{{ url('/spm') }}" class="slide-item"> Dispensasi SPM</a></li>
                     </ul>
                 </li>
+                @endhasanyrole
 
+                @hasanyrole(['Admin|Ketua Tim'])
                 <li class="sub-category">
                     <h3>Input Komponen IKPA Tim</h3>
                 </li>
@@ -106,6 +113,7 @@
 
                     </ul>
                 </li>
+                @endhasanyrole
 
                 <li class="sub-category">
                     <h3>ADK</h3>

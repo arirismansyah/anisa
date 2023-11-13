@@ -22,6 +22,19 @@ class FeatureController extends Controller
 {
     //
 
+    public function landing(Request $request){
+        $user = Auth::user();
+        $roles = $user->roles->pluck('name')->toArray();
+
+        if (in_array('Admin', $roles)) {
+            # code...
+            return view('admin/pages/landing');
+        } else {
+            return view('user/pages/landing');
+        }
+
+    }
+
     public function home(Request $request)
     {
         $user = Auth::user();

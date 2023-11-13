@@ -79,6 +79,7 @@ Route::group(['middleware' => ['auth', 'role:Admin']], function () {
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/landing', [FeatureController::class, 'landing'])->name('landing');
     Route::get('/home', [FeatureController::class, 'home'])->name('home');
     Route::get('/faq', [FeatureController::class, 'faq'])->name('faq');
     Route::get('/knowledges', [FeatureController::class, 'knowledges'])->name('knowledges');
